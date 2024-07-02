@@ -3791,9 +3791,8 @@ static ssize_t synaptics_update_fw_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
 {
 	struct synaptics_ts_data *data = dev_get_drvdata(dev);
-	return snprintf(buf, 2, "%d\n", data->loading_fw);
+	return snprintf(buf, PAGE_SIZE, "%d\n", data->loading_fw);
 }
-
 static ssize_t synaptics_update_fw_store(struct device *dev,
 		struct device_attribute *attr,
 		const char *buf, size_t size)
